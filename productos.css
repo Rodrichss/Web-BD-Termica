@@ -1,0 +1,149 @@
+body{
+    font-family: "Noto-sans", sans-serif;
+    text-align:left;
+    background-color: #bababa;
+    color:#262421;
+    width:100%;
+}
+main{
+    margin-top: 5vh;
+}
+.columns{
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 30%;*/
+    justify-content: center;
+    margin-top:8vh;
+    
+}
+
+.column{
+    background-color: white;
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+    max-width: 98%;
+    width: 18rem;
+    margin:1%;
+}
+
+.column img{
+    max-width: 100%;
+    height: 30vh;
+    margin:auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+    display:block;
+    overflow: hidden;
+    float: center;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.product-info h1{
+    font-size:24px;
+    padding-bottom:3px;
+}
+
+.product-info p{
+    padding-bottom:5px;
+}
+
+.button{
+    color:white;
+    background-color:darkblue;
+    border: white solid 1px;
+    cursor:pointer;
+    text-align:center;
+    font-weight: 700;
+    width:100%;
+    justify-content: space-between;
+    padding:1rem;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    
+}
+.button-admin{
+    color:white;
+    background-color:#262421;
+    border: white solid 1px;
+    cursor:pointer;
+    text-align:center;
+    font-weight: 700;
+    width:100%;
+    padding:1rem;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+.button-eliminar{
+    color:white;
+    background-color:#262421;
+    border: white solid 1px;
+    cursor:pointer;
+    text-align:center;
+    font-weight: 700;
+    width:100%;
+    padding:1rem;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+.button-eliminar:hover{
+    color:red;
+}
+.button-wrapper{
+    margin:auto;
+    width:25%;
+    padding:2vh;
+}
+.button-color{
+    background-color: #262421;
+}
+
+.wrapper{
+    width: min(900px, 100% - 3rem);
+    margin:auto;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    border:solid 1px black;
+    align-items: center;
+    text-align: center;
+}
+table{
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #262421;
+}
+caption,
+th,
+td{
+    padding: 1rem;
+}
+th{
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+}
+tr p{
+    text-align: left;
+}
+td{
+    border-bottom: solid 1px #262421;
+}
+caption{
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+

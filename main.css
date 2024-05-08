@@ -1,0 +1,336 @@
+/* Clase principal lo que se ponga aqui afecta a toda la pagina */
+*{
+    margin: 0; /*margin estable el margen de los
+    cuatro
+    lados. En este caso aplica a los 4
+    lados */
+    padding: 0; /*Espacio entre el contenido del
+    elemento y
+    su borde*/
+    box-sizing: border-box; /*Calcula en ancho y alto de un
+    elemento*/
+    /*font-family: "Noto-sans",sans-serif;*/
+}
+
+    /* Clase contenedor nos dara una sola medida para cada uno de los
+    apartados que se realicen */
+.contenedor{
+    width: 98%;
+    margin: auto;
+}
+body{
+    background-color: #262421;
+}
+header{
+    color: #bababa; /*Color de letra*/
+    height: 50px;
+    background-color:#262421; /*Color de fondo*/
+    width: 100%; /* ancho */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /*indica el orden de un elemento y
+    sus descendientes*/
+}
+h1{
+    float: left; /* Ubica un elemento al lado
+    izquierdo de su
+    contenedor*/
+}
+header .contenedor{
+    display: table; /*Display estable los tipos de
+    visualización
+    interna y externa de un elemento,
+    en este
+    
+    caso estaria forma de table con
+    <table>*/
+}
+    
+    /* Barra de navegación */
+    
+#menu-bar{
+    display: none; /*desaparece la visualizacion de un
+    elemento
+    para que no tenga efecto en el
+    diseño*/
+}
+header label{
+    float: right;
+    font-size: 28px; /*tamaño de la letra*/
+    margin: 6px 0; /*margin estable el margen de los
+    cuatro
+    lados.
+    
+    margin-right -> derecho
+    margin-left -> Izquierdo
+    margin-top -> Arriba
+    margin-bottom -> abajo
+    en este caso aplica ancho y alto*/
+    cursor: pointer; /*agrega un cursor*/
+}
+.menu{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    background-color: #262421;
+    /*las primeras 3 posiciones indican el
+    #262421
+    color en
+    rgb y la ultima la transparencia*/
+    transition: all 0.5s; /*Permite definir transición entre
+    dos estados
+    de un elemento
+    
+    trasnition: nombre propiedad
+    
+    duracion retardo
+    
+    en este caso aplica que todas las
+    
+    propiedades
+    
+    cambien*/
+    
+    transform: translateX(-100%); /*modifica el espacio de coordenadas
+    de formato visual
+    
+    los elementos pueden ser
+    trasladados, rotados, escalados
+    
+    o sesgados de acuedo a los valores
+    
+    establecidos*/
+}
+.menu a{
+    display: block;
+    color:#bababa;
+    height: 50px;
+    text-decoration: none; /*Da formato de texto por ejemplo
+    subtayado, tachado etc*/
+    padding: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /*crea un borde
+    primera
+    posicion el ancho del borde
+    
+    tipo y color*/
+    
+}
+.menu a:hover{
+    background: rgba(255, 255, 255, 0.3); /* cuando posiciones el cursor
+    encima del
+    elemento se visualiza con el
+    color que elijas
+    
+    nota: solo aplica la
+    
+    etiqueta a dentro de donde posicionaron
+    
+    la clase menu*/
+    
+}
+    /* Boton barra de navegacion */
+#menu-bar:checked ~ .menu{ /*cada que se click al boton
+    aparece
+    la barra de navegacion;*/
+    transform: translateX(0%);
+}
+    
+    /* Mostrar la barra de navegacion en web */
+@media (min-width:1024px){
+    .menu{
+    position: static;
+    width: auto;
+    height: auto;
+    transform: translateX(0%);
+    
+    float: right;
+    display: flex;
+    }
+    .menu a{
+    border: none;
+    }
+    header label{
+    display: none;
+    }
+}
+    
+    /* Baner */
+#baner{
+    margin-top: 50px;
+    position: relative;
+    background-color: #262421;
+    
+}
+#baner img{
+    width: 75%;
+    height: 40rem;
+    margin:auto;
+    display:block;
+    margin-bottom: 2rem;
+}
+#baner .contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+}
+#baner h2{
+    font-size: 30px;
+    padding-top: 5em;
+}
+    
+    /* secciones blanco */
+.blanco{
+    text-align: center;
+    background-color: #bababa;
+    color: #262421;
+}
+.blanco a{
+    display: flex;
+    
+    width: 45%;
+    color: #262421;
+    text-decoration: none;
+    padding: 1em;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    border: 0.2em solid #262421;
+    font-size: 1em;
+    justify-content: center;
+}
+.blanco a:hover{
+    background:#262421;
+    color: #bababa;
+}
+    
+    /* Creación de Columnas */
+.blancoC{
+    display: flex; /*El elemento se comporta como un
+    elemento de
+    bloque*/
+    flex-direction: row; /*Establece como colocar los objetos en
+    el contenedos
+    flexible, en este caso esta deficinido
+    en la dreccion del texto*/
+    flex-wrap: wrap; /* especifica si los elementos hijos son
+    obligados a
+    permanecer en la misma linea*/
+}
+    /* Indica lo que medira de ancho cada columna */
+.blancoC > div{
+    width: 50%; /* En el ejemplo son 2, asi que de divide en 50%*/
+}
+    /* Slider */
+.frame-slider{
+    width: 20vh;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    
+    margin-bottom: 2em;
+    overflow: hidden; /*Indica la visualizacion del
+    contenido cuando
+    se hace mas pequeña la vista en
+    este
+    caso el contenido es recortado
+    y no se muestran
+    barras de posicion*/
+    border: 6px solid;
+    border-color:black;
+    
+}
+.frame-slider .contenedor{
+    display: flex;
+    justify-content: center; /*define como el navegador
+    distribuye el espacio
+    entre y alrededor de los items
+    flex, a lo largo
+    
+    del eje principal de su
+    
+    contenedor*/
+    flex-wrap: wrap;
+}
+.frame-slider ul{
+    display: flex;
+    padding: 0;
+    width: 300%;
+    height: 100%;
+    animation: slide 5s infinite alternate; /*animacion en el cual
+    podemos definir
+    duracion, ritmo etc, en
+    este caso con una
+    duracion de 5s y
+    alternadamente n veces*/
+}
+.frame-slider li{
+    list-style: none;
+    width: 100%;
+}
+.frame-slider img{
+    height: 100%;
+    width: 100%;
+}
+    
+    /*Definen los fotogramas de la secuencia de animacion
+    se estable un inicio y un fin para cada animacion estos se miden en % y van de 0
+    a 100*/
+@keyframes slide{
+    /* imagen1 */
+    0%{margin-left: 0%;} /*inicio*/
+    30%{margin-left: 0%;} /*fin*/
+    /* imagen2 */
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+    /* imagen3 */
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+    
+.negro{
+    text-align: center;
+    background: #262421;
+    color: #bababa;
+}
+    
+.negro a{
+    display: flex;
+    width: 45%;
+    color: #bababa;
+    text-decoration: none;
+    padding: 1em;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    border: 0.2em solid #bababa;
+    font-size: 1em;
+    justify-content: center;
+}
+.negro a:hover{
+    background:#bababa;
+    color: #262421;
+}
+.footer{
+    
+    text-align: center;
+    background: #bababa;
+    color: #262421;
+    padding: 5em;
+}
+.footerC{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.footerC > div{
+    width: 33%;
+}

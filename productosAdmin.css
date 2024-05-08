@@ -1,0 +1,167 @@
+body{
+    font-family: "Noto-sans", sans-serif;
+    text-align:left;
+    background-color: #bababa;
+    color:#eee;
+}
+
+.wrapper{
+    width: min(900px, 100% - 3rem);
+    margin:auto;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    /*border:solid 1px black;*/
+    
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #2d2b27;
+}
+caption,
+th,
+td{
+    padding: 1rem;
+}
+th{
+    background: #262421;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+}
+td{
+    border-bottom: solid 1px #262421;
+}
+caption{
+    background: #22201e;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+tr:nth-of-type(2n){
+    background: #393631;
+}
+@media(max-width: 650px){
+    th{
+        display:none;
+    }
+    td{
+        display: grid;
+        gap:0.5rem;
+        grid-template-columns: 15ch auto;
+        padding: 0.5rem 1rem;
+    }
+    td img{
+        max-height: 10rem;
+    }
+    td::before{
+        font-weight: 700;
+        content: attr(data-cell) ": ";
+        text-transform: capitalize;
+    }
+}
+
+td img{
+    list-style: none;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+
+
+.button{
+    color:white;
+    background-color:darkblue;
+    border: white solid 1px;
+    cursor:pointer;
+    text-align:center;
+    font-weight: 700;
+    width:100%;
+    padding:1rem;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    overflow: auto;
+}
+.button-wrapper{
+    margin:auto;
+    width:8rem;
+    padding:2vh;
+}
+.empty-cell{
+    background-color: #bababa;
+    border-color: #bababa;
+}
+.wrapper-continuar{
+    margin:auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-cantidad{
+    width: 3vh;
+    color-scheme: dark;
+}
+.input-wrapper{
+    display: flex;
+    align-items: center;
+}
+.erase-button{
+    background-image: url('../proyecto1/img/trash_can_32px.png');
+    cursor:pointer;
+    padding:1rem;
+    margin:auto;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-position: center;
+    border-color:#22201e;
+    background-color: #22201e;
+}
+.modify-button{
+    background-image: url(../proyecto1/img/edit_icon_32px.png);
+}
+.search-bar{
+    background-color: #22201e;
+    width:100%;
+    align-self: center;
+    padding:1rem;
+    margin:1rem;
+}
+.busqueda-nombre{
+    color-scheme: dark;
+}
+.subtotal-total{
+    position:relative;
+}
+.select{
+    background-color:white;
+    border-color:#bababa;
+    cursor:pointer;
+}
+.filtrar-button{
+    background-color: #bababa;
+    cursor:pointer;
+    padding:0.3rem;
+    margin:0.5rem;
+    border-color:#bababa;
+    align-self:flex-end;
+    margin-bottom:0.7rem;
+}
+.derecha{
+    float:right;
+    max-width:100%;
+    max-height:100%;
+    
+}
+.barra-busqueda{
+    padding:0.6rem;
+    margin:0.6rem;
+}

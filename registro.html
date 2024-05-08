@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse • Termicá</title>
+</head>
+<body>
+    <section class="box" class="form" id="todo">
+        <h1 class="topbox">Registrarse</h1>
+        <form action="registro.php" method="post">
+            <ul>
+                
+                <label class="label" for="nombre">Nombre</label><br>
+                <input class="form-label" type="text" id="nombre" name="nombre" required/>
+
+                <label class="label" for="apellidoP">Apellido paterno</label><br>
+                <input class="form-label" type="text" id="apellidoP" name="apellidoP" required/>
+
+                <label class="label" for="apellidoM">Apellido materno</label><br>
+                <input class="form-label" type="text" id="apellidoM" name="apellidoM" required/>
+
+                <label class="label" for="correo">Correo electrónico</label><br>
+                <input class="form-label" type="text" id="correo" name="correo" required/>
+
+                <label class="label" for="telefono">Número de teléfono</label><br>
+                <input class="form-label" type="number" id="telefono" name="telefono" required/>
+            
+                <label class="label" for="password">Contraseña</label><br>
+                <input class="form-label" type="password" id="password" name="password" required/>
+                <!--
+                <label class="label" for="passwordv">Vuelve a escribir la contraseña</label><br>
+                <input class="form-label" type="text" id="passwordv" name="password_verification"/>
+                -->
+            </ul>
+            <button class="button" type="submit">Crear cuenta</button>
+        </form>
+        
+
+        <div class="others">
+            <a href="login.html">¿Ya estás registrado?</a>
+        </div>
+    </section>
+</body>
+</html>
