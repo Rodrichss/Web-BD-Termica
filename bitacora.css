@@ -6,7 +6,7 @@ body{
 }
 
 .wrapper{
-    width: min(900px, 100% - 3rem);
+    width: min(90%, 100% - 3rem);
     margin:auto;
     margin-inline: auto;
     display: flex;
@@ -20,9 +20,10 @@ body{
 }
 table{
     width: 100%;
-    table-layout: fixed;
+    table-layout: auto;
     border-collapse: collapse;
     background-color: #2d2b27;
+    word-wrap: break-word;
 }
 caption,
 th,
@@ -175,4 +176,8 @@ td img{
 .barra-busqueda{
     padding:0.6rem;
     margin:0.6rem;
+}
+
+.sentencia{
+    overflow-x: scroll;
 }

@@ -10,22 +10,23 @@
 <body>
     <header>
         <div class="contenedor">
-            <h1 class="">Termicá</h1>
+            <h1 class=""></h1>
+            <img src="img/logo_32px.png">
             <input type="checkbox" id="menu-bar">
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu" >
                 <a href="index.php">Inicio</a>
                 <a href="mision.html">Misión</a>
                 <a href="vision.html">Visión</a>
+                <a href="vistaProductosjs.html">Productos</a> <!-- productos.php-->
+                <?php if(!isset($_SESSION['nombre'])){?>
+                    <a href="login.html">Log in</a>
+                    <a href="registro.html">Registrarse</a>
+                <?php }?>
                 <?php 
                 if(isset($_SESSION['nombre'])){?>
-                    <a href="vistaCarrito.php"><img src="img/cart_32px.png"></a>
+                    <a href="carritojs.html"><img src="img/cart_32px.png"></a> <!-- vistaCarrito.php-->
                     <a href="logout.php"><img src="img/logout_32px.png"></a>
-                <?php }?>
-                <a href="productos.php">Productos</a>
-                <?php if(!isset($_SESSION['nombre'])){?>
-                    <a href="login.html">Login</a>
-                    <a href="registro.html">Registrarse</a>
                 <?php }?>
             </nav>
         </div>
@@ -46,13 +47,9 @@
         <div class="contenedor">
             <div class="blancoC">
                 <div>
-                    <p class="pt-5" >Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Neque blanditiis maiores sed
-                    corrupti sint numquam error commodi tempore iusto.
-                    Necessitatibus id at provident,
-
-                    veritatis nisi maxime tempore dolorem blanditiis
-                    laboriosam!
+                    <p class="pt-5" >Ya sea que estés buscando una taza para tu café matutino o un termo para mantener 
+                        tu agua fría durante todo el día, estás en el lugar correcto. 
+                        ¡Explora nuestra selección y descubre cómo podemos hacer que tus bebidas sean aún más especiales! 
                     </p>
                 </div>
                 <div>
@@ -82,12 +79,10 @@
                     </div>
                 </div>
                 <div>
-                    <p class="pt-5" >Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Neque blanditiis maiores sed
-                    corrupti sint numquam error commodi tempore iusto.
-                    Necessitatibus id at provident,
-                    veritatis nisi maxime tempore dolorem blanditiis
-                    laboriosam!
+                    <p class="pt-5" >Nuestra misión en Termicá es proporcionar productos de alta calidad que mantengan las 
+                        bebidas calientes o frías durante más tiempo. Nos esforzamos por ofrecer vasos térmicos duraderos, 
+                        funcionales y elegantes que satisfagan las necesidades de nuestros clientes. Creemos que cada sorbo cuenta, 
+                        y estamos comprometidos a mejorar la experiencia de beber en cualquier lugar y en cualquier momento.
                     </p>
 
                     <a style="text-align: center;" href="mision.html">Misión</a>
@@ -102,12 +97,8 @@
             <div class="contenedor">
                 <div class="blancoC">
                     <div>
-                        <p class="pt-5" >Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Neque blanditiis maiores sed
-                        corrupti sint numquam error commodi tempore iusto.
-                        Necessitatibus id at provident,
-                        veritatis nisi maxime tempore dolorem blanditiis
-                        laboriosam!
+                        <p class="pt-5" >Visualizamos un mundo donde cada persona pueda disfrutar de su bebida
+                             favorita sin preocuparse por la temperatura, gracias a nuestros productos de vanguardia.
                         </p>
                         <a href="servicios.html">Visión</a>
                     </div>
@@ -147,7 +138,7 @@
                     laboriosam!
                     </p>
 
-                    <a style="text-align: center;" href="productos.html">Productos</a>
+                    <a style="text-align: center;" href="productos.php">Productos</a>
                 </div>
             </div>
         </div>

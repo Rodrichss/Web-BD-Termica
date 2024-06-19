@@ -80,8 +80,8 @@
 
                                 <h2><?php echo $row['nombreProducto']?></h2>
                                 <h1>$<?php echo $row['precioProducto']?></h1>
-                                <a href="detalles.php"><button class="button button-color">Detalles</button></a>
-                                <button class="button" type="submit">Agregar al carrito</button>
+                                <!-- <a href="detalles.php"><button class="button button-color">Detalles</button></a> -->
+                                <button type="submit" class="button addToCart" data-id="<?php echo $row['idProducto']; ?>" data-nombre="<?php echo $row['nombreProducto']; ?>" data-precio="<?php echo $row['precioProducto'];?>">Agregar al carrito</button>
                             </div>
                         </div>
                     </form>

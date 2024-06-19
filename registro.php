@@ -15,7 +15,7 @@ passwordUsuario)values(0,'$nombre','$apellidoP','$apellidoM','$correo','$telefon
 
 if($sql){
     echo "Usuario Registrado";
-    header('Location: index.html'); //
+    header('Location: index.php'); //
     exit; //
 }else{
     echo "Error al registrar";

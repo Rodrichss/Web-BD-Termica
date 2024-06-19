@@ -1,3 +1,16 @@
+<?php 
+    include('con.php');
+    if($_SESSION['rol'] != 'admin'){
+        header('Location: index.php');
+        exit();
+    }
+    $admin = $_SESSION['correo'];
+    mysqli_query($con, "SET @admin = '$admin'");
+
+    include('triggers.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +27,10 @@
             <input type="checkbox" id="menu-bar">
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu" >
-                <a href="index.html">Inicio</a>
-                <a href="mision.html">Misión</a>
-                <a href="vision.html">Visión</a>
-                <a href="productos.html">Productos</a>
-                <a href="login.html">Login</a>
-                <a href="registro.html">Registrarse</a>
+                <a href="index.php">Inicio</a>
+                <a href="#">Usuarios</a>
+                <a href="productosAdmin.php">Productos</a>
+                <a href="bitacora.php">Bitácora</a>
             </nav>
         </div>
     </header>
@@ -87,7 +98,7 @@
                         <th>Precio</th>
                         <th>Color</th>
                         <th>Material</th>
-                        <th>Descripción</th>
+                        <!-- <th>Descripción</th> -->
                         <th>Imagen</th>
                         <th>Modificar</th>
                         
@@ -104,7 +115,7 @@
                     <td data-cell="precio"><p><?php echo $row['precioProducto']?> $</p></td>
                     <td data-cell="color"><p><?php echo $row['colorProducto']?></p></td>
                     <td data-cell="material"><p><?php echo $row['materialProducto']?></p></td>
-                    <td data-cell="descripcion"><p><?php echo $row['descripcionProducto']?></p></td>
+                    <!-- <td data-cell="descripcion"><p><//?php echo $row['descripcionProducto']?></p></td> -->
                     <td data-cell="imagen"><img src="<?php echo $row['imagenProducto']?>"></td>
                     <td data-cell="editar/eliminar">
                         <div class="input-wrapper">
@@ -127,7 +138,7 @@
 
 
         <div class="button-wrapper">
-            <a href="registroProductos.html"><button class="button">Añadir producto</button></a>
+            <a href="registroProductosForm.php"><button class="button">Añadir producto</button></a>
         </div>
         
     </main>

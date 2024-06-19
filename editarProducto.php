@@ -1,5 +1,11 @@
 <?php
     include('con.php');
+    if($_SESSION['rol'] != 'admin'){
+        header('Location: index.php');
+        exit();
+    }
+    $admin = $_SESSION['correo'];
+    mysqli_query($con, "SET @admin = '$admin'");    
 
     $id = $_POST['id'];
     $nombre=$_POST['nombre'];

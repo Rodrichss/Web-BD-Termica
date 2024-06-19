@@ -1,6 +1,13 @@
 <?php
 
 include "con.php";
+if($_SESSION['rol'] != 'admin'){
+    header('Location: index.php');
+    exit();
+}
+
+$admin = $_SESSION['correo'];
+mysqli_query($con, "SET @admin = '$admin'");
 
 $nombre=$_POST['nombre'];
 $precio = floatval($_POST['precio']);
@@ -15,7 +22,7 @@ descripcionProducto,materialProducto,popularProducto
 
 if($sql){
     echo "Producto Registrado";
-    header('Location: index.html'); //
+    header('Location: productosAdmin.php'); //
     exit; //
 }else{
     echo "Error al registrar";

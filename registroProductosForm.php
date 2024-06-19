@@ -1,0 +1,49 @@
+<?php 
+    include('con.php');
+    if($_SESSION['rol'] != 'admin'){
+        header('Location: index.php');
+        exit();
+    }
+
+    $admin = $_SESSION['correo'];
+    mysqli_query($con, "SET @admin = '$admin'");
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="registroProductos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar producto</title>
+</head>
+<body>
+    <section class="box" class="form" id="todo">
+        <h1 class="topbox">Registrar un nuevo producto</h1>
+        <form action="registroProductos.php" method="post">
+            <ul>
+                
+                <label class="label" for="nombre">Nombre</label><br>
+                <input class="form-label" type="text" id="nombre" name="nombre"/>
+
+                <label class="label" for="precio">Precio (en pesos)</label><br>
+                <input class="form-label" type="text" id="precio" name="precio"/>
+
+                <label class="label" for="color">Color</label><br>
+                <input class="form-label" type="text" id="color" name="color"/>
+
+                <label class="label" for="material">Material</label><br>
+                <input class="form-label" type="text" id="material" name="material"/>
+
+                <label class="label" for="imagen">URL de imagen</label><br>
+                <input class="form-label" type="text" id="imagen" name="imagen"/>
+
+                <label class="label" for="descripcion">Descripción</label><br>
+                <input class="form-descripcion" type="text" id="descripcion" name="descripcion"/>
+            </ul>
+            <button class="button" type="submit">Registrar producto</button>
+        </form>
+    </section>
+</body>
+</html>

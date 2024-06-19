@@ -13,9 +13,22 @@ if($nr == 1){
     if($password == $row["passwordUsuario"]){
         $_SESSION["login"] = true;
         $_SESSION["id"] = $row["idUsuario"];
-        echo "Sesión iniciada exitosamente";
-        header('Location: index.php'); //
-        exit; // 
+        $_SESSION['nombre'] = $row['nombreUsuario'];
+        $_SESSION['apellidoP'] = $row['apellidoPUsuario'];
+        $_SESSION['apellidoM'] = $row['apellidoMUsuario'];
+        $_SESSION['correo'] = $row['correoUsuario'];
+        $_SESSION['telefono'] = $row['telefonoUsuario'];
+        $_SESSION['rol'] = $row['rolUsuario'];
+
+        if($row['rolUsuario'] == 'usuario'){
+            echo "Sesión iniciada exitosamente";
+            header('Location: index.php'); //
+            exit; // 
+        }else if($row['rolUsuario'] == 'admin'){
+            echo "Sesión iniciada exitosamente";
+            header('Location: productosAdmin.php'); //
+            exit; // 
+        }
     }
     else{
         echo "Contraseña incorrecta";
